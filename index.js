@@ -1,6 +1,7 @@
 import { argv } from "node:process";
-import { readCitas, register, deleteCitas, updatedRegister } from "./operations.js";
+import {readCitas, register} from "./operations.js";
 
+//crear la carpeta operations y citas.json
 // try {
 //     await writeFile("operations.js", "");
 //     console.log(' archivo JS creado ');
@@ -16,16 +17,19 @@ import { readCitas, register, deleteCitas, updatedRegister } from "./operations.
 // }
 
 const [acc, NombreDelAnimal, Edad, TipoDeAnimal, ColorDelAnimal, Enfermedad] =
-    argv.slice(2);
+  argv.slice(2);
 
-if (acc === "register"){
-    register(NombreDelAnimal, Edad, TipoDeAnimal, ColorDelAnimal, Enfermedad);
+if (acc === "register") {
+  register(NombreDelAnimal, Edad, TipoDeAnimal, ColorDelAnimal, Enfermedad);
 }
 
-if (acc === "read"){
-    readCitas();
+if (acc === "read") {
+  readCitas();
 }
 
-if(acc !== "register" ||"read"){
-    console.log(`ERROR en comando:${acc},`,"debes ingresar un comando: read, register." )
+if (acc !== "register" || "read") {
+  console.log(
+    `ERROR en comando:${acc},`,
+    "debes ingresar un comando: read, register."
+  );
 }
